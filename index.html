@@ -16,29 +16,31 @@
 
         <!-- Preloader -->
         <div id="loader-wrapper">
-            <div id="loader"></div>
+            <div id="loader"><!--<h1 style="color: #FFF; text-align: center;">Very Cancer</h1><p style="color: #FFF; text-align: center;">Much Wow</p>--></div>
             <div class="loading-section section-left"></div>
             <div class="loading-section section-right"></div>
         </div>
 
+        <!-- CSS Styles and JavaScripts -->
         <div>
-            <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-            <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+            <link rel="stylesheet" href="./CSS/bootstrap/bootstrap.min.css">
+            <link rel="stylesheet" href="./CSS/bootstrap/bootstrap-theme.min.css">
 
-            <script src="http://code.jquery.com/jquery-latest.js"></script>
-            <script src="http://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-            <script src="http://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>    
-            <script src="http://code.jquery.com/jquery-latest.js"></script>
-            <script src="http://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-            <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <script src="./js/jquery/jquery.min.js"></script>
+            <script src="./js/respond.js"></script>
+            <script src="./js/jquery/jqueryui.min.js"></script>
+            <script src="./js/bootstrap/bootstrap.min.js"></script>
+        
         </div>
+
         <!-- Main Page -->
         
         <header>
             <div>
                 <ul class="navigation" id="nav-collapse">
 
-                    <li><a class="active" href="#home">Home</a></li>
+                    <li style="color: rgba(255, 255, 255, 1); margin: 10px !important;"><span style="padding-left: 10px; padding-top: 10px;" class="glyphicon glyphicon-console title" aria-hidden="true"></span></li>
+                    <li><a class="" href="#home">Home</a></li>
                     <li><a class="" href="#news">News</a></li>
                     <li><a class="" href="#contact">Contact</a></li>
                     <li><a class="" href="#about">About</a></li>
@@ -48,17 +50,16 @@
                 </ul>
             </div>
         </header>
+    </div>
 
-        <h1>Text awdadsada wda</h1>
-        <h1>Text awdasda adw</h1>
-        <h1>Text awdsad adwadasd ad</h1>
-        <h1>Text adsa awdasddawdaFG awda</h1>
-        <h1>Text dadafweafef aDawd</h1>
-        <h1>Text dawdasfewf a</h1>
-        <h1>Text</h1>
-        <h1>Text</h1>
-        <h1>Text</h1>
-     
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="container-fluid bg-banner"></div>
+        </div>
+
+        <h1 class="ABC">Text</h1>
+
     </div>
 
     <!-- Responsive Nav -->    
@@ -86,10 +87,10 @@
     <script type="text/javascript">
 
         $(document).ready(function () {
-            console.log("Page done loading");
+            
             $('#loader').fadeOut(500); 
-            $('.section-left').delay(500).hide("slide", { direction: "left" }, 800);
-            $('.section-right').delay(500).hide("slide", { direction: "right" }, 800);
+            $('.section-left').delay(500).hide("slide", { direction: "left" }, 500);
+            $('.section-right').delay(500).hide("slide", { direction: "right" }, 500);
 
             setTimeout(function () {
                 $('#loader-wrapper').remove();
