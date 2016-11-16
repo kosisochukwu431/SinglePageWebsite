@@ -41,10 +41,10 @@
                 <ul class="navigation" id="nav-collapse">
 
                     <li style="color: rgba(255, 255, 255, 1); margin: 10px !important;"><span style="padding-left: 10px; padding-top: 10px;" class="glyphicon glyphicon-console title" aria-hidden="true"></span></li>
-                    <li><a class="" href="#home">Home</a></li>
-                    <li><a class="" href="#news">News</a></li>
-                    <li><a class="" href="#contact">Contact</a></li>
-                    <li><a class="" href="#about">About</a></li>
+                    <li><a class="menu-item" href="#home">Home</a></li>
+                    <li><a class="menu-item" href="#news">News</a></li>
+                    <li><a class="menu-item" href="#contact">Contact</a></li>
+                    <li><a class="menu-item" href="#about">About</a></li>
                     <li class="icon">
                         <a href="javascript:void(0);" onclick="collapse()"><span id="icon" class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a>
                     </li>
@@ -101,51 +101,8 @@ A line break that is inserted manually, and preserved when re-flowing, may still
         
       
     </div>
-    
-    <script type="text/javascript">
-        
-       function scroll(elementId) {
-           $('#' + elementId).scroll(1000); 
-       }
       
-    </script>
-
-    <!-- Responsive Nav -->    
-    <script type="text/javascript">
-        function collapse() {
-            var x = $('#nav-collapse');
-            var y = $('#icon');
-
-            if (x.hasClass('responsive')) {
-                x.removeClass('responsive');
-                
-                y.removeClass('glyphicon-remove');
-                y.addClass('glyphicon-menu-hamburger');
-
-            } else {
-                x.addClass('responsive');
-
-                y.removeClass('glyphicon-menu-hamburger');
-                y.addClass('glyphicon-remove');
-            }
-        }
-    </script>
-    
-    <!-- Jquery -->
-    <script type="text/javascript">
-
-        $(document).ready(function () {
-            
-            $('#loader').fadeOut(500); 
-            $('.section-left').delay(500).hide("slide", { direction: "left" }, 500);
-            $('.section-right').delay(500).hide("slide", { direction: "right" }, 500);
-
-            setTimeout(function () {
-                $('#loader-wrapper').remove();
-            }, 1500);
-        });
-
-
-    </script>
+    <script src="js/main.js"></script>
+          
   </body>
 </html>
