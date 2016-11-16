@@ -41,4 +41,6 @@ $('.menu-item').click(function (event) {
         scrollTop: location
     }, animationSpeed);
 
+    collapse();
+
 });
