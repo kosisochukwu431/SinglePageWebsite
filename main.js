@@ -1,8 +1,8 @@
-$(document).ready(function () {
+﻿$(document).ready(function () {
 
     $('html, body').animate({
         scrollTop: 0
-    }, 0);
+    }, 1);
 
     hideLoader();
 
