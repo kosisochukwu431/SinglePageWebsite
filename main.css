@@ -1,0 +1,122 @@
+/* ===== Page ====== */
+
+.bg-banner {
+
+    background: url("../res/banner.jpg") center;
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    position: relative;
+
+    padding-bottom: 50%;
+
+    width: 100%;
+}
+
+@media screen and (max-width:500px){
+    @media screen and (max-height:800px) {
+        div.bg-banner {
+            padding-top: 25%;
+        }
+    }
+}
+
+@media screen and (min-aspect-ratio:15/9) {
+    div.bg-banner {
+            padding-bottom: 34%;
+    }
+}
+
+@media screen and (min-aspect-ratio:18/9) {
+    div.bg-banner {
+            padding-bottom: 23%;
+    }
+}
+
+/* ===== Navigation ===== */
+
+ul.navigation {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  z-index: 700;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+ul.navigation li {
+    float: left;
+}
+
+ul.navigation li a {
+  display: inline-block;
+  color: #FFF;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.05s;
+  font-size: 21px;
+}
+
+ul.navigation li a:hover {
+    background: rgba(25, 25, 25, 1);
+
+    border-bottom: 3px solid rgb(255, 148, 8);
+}
+
+.active {
+    background: rgba(25, 25 , 25, 1);
+    
+    border-bottom: 3px solid rgb(255, 148, 8);
+
+}
+
+ul.navigation li.icon {
+    display: none;
+
+}
+
+@media screen and (max-width:720px) {
+  
+  ul.navigation li:not(:first-child) {
+    display: none;
+  }
+
+  ul.navigation li.icon {
+    float: right;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width:720px) {
+   
+    ul.navigation.responsive {
+        position: fixed;
+    }
+
+    ul.navigation.responsive li.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    ul.navigation.responsive li {
+        float: none;
+        display: inline;
+    }
+
+    ul.navigation.responsive li a {
+        display: block;
+        text-align: left;
+    }
+
+    ul.navigation.responsive li span.title {
+        padding-top: 20px !important;
+    }
+}
+

@@ -1,5 +1,14 @@
 ﻿$(document).ready(function () {
 
+    $('html, body').animate({
+        scrollTop: 2657
+    }, 1);
+
+    hideLoader();
+
+});
+
+function hideLoader() {
     $('#loader').fadeOut(500);
     $('.section-left').delay(500).hide("slide", { direction: "left" }, 500);
     $('.section-right').delay(500).hide("slide", { direction: "right" }, 500);
@@ -7,7 +16,7 @@
     setTimeout(function () {
         $('#loader-wrapper').remove();
     }, 1500);
-});
+}
 
 function collapse() {
     var x = $('#nav-collapse');
@@ -35,7 +44,8 @@ $('.menu-item').click(function (event) {
 
     var tag = $(this).attr('href');
     var location = $(tag).offset().top - headerOffset;
-    var animationSpeed = 500;
+    var current = window.pageYOffset;
+    var animationSpeed = Math.abs(current - location) / 2.5;
 
     $('html, body').animate({
         scrollTop: location
@@ -44,3 +54,57 @@ $('.menu-item').click(function (event) {
     collapse();
 
 });
+
+// Called when scrolling
+
+var arr = ['#home', '#news', '#contact', '#about'];
+
+window.onscroll = function (e) {
+
+    var locArr = [];
+
+    for (var i = 0; i < arr.length; i++) {
+        var loc = $(arr[i]).offset().top;
+        locArr.push(loc);
+    }
+
+    // Home include the banner as well
+    locArr[0] = 0;
+    locArr.push(locArr[locArr.length - 1] + 100);
+    
+    var currentLocation = window.pageYOffset + 115;
+
+    var section;
+
+    for (var i = 0; i + 1 < locArr.length; i++) {
+        if (currentLocation >= locArr[i] && currentLocation <= locArr[i + 1]) {
+            section = arr[i];
+            break;
+        }
+    }
+
+    var menu = $('.menu-item');
+
+    for (var i = 0; i < menu.length; i++) {
+
+        var item = $(menu[i]);
+
+        if (item.attr('href') == section) {
+            
+            var list = $('.menu-item');
+
+            for (var i = 0; i < menu.length; i++) {
+
+                var t = $($(list[i]));
+
+                if (t.hasClass('active')) {
+                    t.removeClass('active')
+                }
+            }
+
+            item.addClass('active');
+
+        }
+    }
+
+}
